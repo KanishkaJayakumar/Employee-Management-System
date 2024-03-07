@@ -34,7 +34,7 @@ savedraft() {
       experience: any;
       salary: any;
       address: any;
-      private baseUrl= 'http://localhost:8080/addemp'
+      private baseUrl= 'https://employee-management-system-dhpx.onrender.com/addemp'
     
     departmentlist : any = ['COMPUTER SCIENCE & ENGINEERING', 'IT','ElECTRONICS ENGINEERING','ELECTRICAL ENGINEERING', 'CSBS','OTHERS' ]
     selectedOption: string='';
