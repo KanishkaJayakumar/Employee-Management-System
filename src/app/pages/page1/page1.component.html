@@ -1,0 +1,65 @@
+<div class="pagecont" style="background-color: black;">
+    <div class="conta"
+        style="background-color: #dabf3d;text-align: center;align-items: center;padding: 4px;font-weight: bold;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+        <h1 style="justify-content: center;">Personal Details</h1>
+        <p>Please provide the following information to complete your registration:</p>
+    </div>
+
+
+    <div class="form-tag" style="background-color: black; margin-top: 30px;">
+        <form style="align-items: center;background-color: #dabf3d;width: 500px;margin-left: 540px; padding: 30px;">
+            <div class="form-group row">
+                <label for="aadhaar"> Aadhaar Number:</label>
+                <input type="number" id="aadhaar" minlength="12" [(ngModel)]="aadhaar" name="aadhaar" required #aadhaa="ngModel">
+                <div *ngIf="aadhaa.touched && aadhaa.invalid" class="validation-message">
+                    Aadhaar Number is required.
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="account"> Account Number:</label>
+                <input type="number" id="account" minlength="11" [(ngModel)]="account" name="account" required #accoun="ngModel">
+                <div *ngIf="accoun.touched && accoun.invalid" class="validation-message">
+                    Account Number is required.
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="ifsc">IFSC Code : </label>
+                <input type="text" id="ifsc" minlength="10" [(ngModel)]="ifsc" name="ifsc" required #ifs="ngModel">
+                <div *ngIf="ifs.touched && ifs.invalid" class="validation-message">
+                    IFSC Code is required.
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="bankname">Bank Name : </label>
+                <input type="text" id="bankname" minlength="10" [(ngModel)]="bankname" name="bankname" required #banknam="ngModel">
+                <div *ngIf="banknam.touched && banknam.invalid" class="validation-message">
+                    Bank Name is required.
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="branchname">Branch Name : </label>
+                <input type="text" id="branchname" minlength="10" [(ngModel)]="branchname" name="branchname" required #branchnam="ngModel">
+                <div *ngIf="branchnam.touched && branchnam.invalid" class="validation-message">
+                    Branch Name is required.
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="pan"> PAN Number:</label>
+                <input type="number" id="pan" minlength="10" [(ngModel)]="pan" name="pan" required #pa="ngModel">
+                <div *ngIf="pa.touched && pa.invalid" class="validation-message">
+                    PAN Number is required.
+                </div>
+            </div>
+
+            <button type="submit" (click)="savedraft2()" style="border: 1px solid black; width: 240px;height: 40px;font-size: 25px;font-weight: bold; margin-left: 100px;margin-top: 14px;"> Save Draft </button>
+        
+            <button type="submit" (click)="submitformdata()" style="border: 1px solid black; width: 240px;height: 40px;font-size: 25px;font-weight: bold; margin-left: 100px;margin-top: 14px;"> Submit </button>
+
+            <button type="button" routerLink="/" style="border: 1px solid black; width: 240px;height: 40px;font-size: 25px;font-weight: bold; margin-left: 100px;margin-top: 14px;">Back</button>
+        </form>
+    </div>
+</div>

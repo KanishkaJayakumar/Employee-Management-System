@@ -1,0 +1,115 @@
+<div class="contains" style="background-color: rgb(12, 11, 11); ">
+
+    <div class="conta"
+        style="background-color: #dabf3d;text-align: center;align-items: center;padding: 4px;font-weight: bold;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+        <h1 style="justify-content: center;">Employee Management System</h1>
+        <p>Please provide the following information to complete your registration:</p>
+    </div>
+    <div class="formimg" style="display: flex;flex-direction: row;">
+
+
+        <form style="background-color: #dabf3d; border: 2px solid black; margin-top: 60px;"
+            (ngModelChange)="checkFormValidity()">
+            <label for="firstname">First Name:</label>
+            <input type="text" id="firstname" [(ngModel)]="firstname" name="firstname" required #firstnam="ngModel"
+                pattern="[a-zA-Z]+" maxlength="15">
+            <div *ngIf="firstnam?.touched && firstnam?.invalid" class="validation-message">
+                <div *ngIf="firstnam?.errors?.['required']">First Name is required.</div>
+                <div *ngIf="firstnam?.errors?.['maxlength']">First Name must be maximum 15 characters long.</div>
+                <div *ngIf="firstnam?.errors?.['pattern']">First Name must contain only alphabets.</div>
+            </div>
+
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" [(ngModel)]="lastname" name="lastname" required #lastnam="ngModel"
+                pattern="[a-zA-Z]+" maxlength="15">
+            <div *ngIf="lastnam.touched && lastnam.invalid" class="validation-message">
+                <div *ngIf="lastnam?.errors?.['required']">Last Name is required.</div>
+                <div *ngIf="lastnam?.errors?.['maxlength']">Last Name must be maximum 15 characters long.</div>
+                <div *ngIf="lastnam?.errors?.['pattern']">Last Name must contain only alphabets.</div>
+            </div>
+
+            <label for="empid">Enter the Employee Id:</label>
+            <input type="number" id="empid" [(ngModel)]="empid" name="empid" required #empi="ngModel" >
+            <div *ngIf="empi.touched && empi.invalid" class="validation-message">
+                <div *ngIf="empi.errors?.['required']">Employee ID is required.</div>
+                <div *ngIf="empi.errors?.['max']">Employee ID must be less than or equal to 10000.</div>
+
+            </div>
+
+            <label for="email">Enter your Email:</label>
+            <input type="email" id="email" [(ngModel)]="email" name="email" required #emai="ngModel">
+            <div *ngIf="emai.touched && emai.invalid" class="validation-message">
+                Email is required.
+            </div>
+
+            <label for="department">Select Department:</label>
+            <select name="department" id="department" [(ngModel)]="department" #departmen="ngModel">
+                <option value="" disabled selected>Select your Department:</option>
+                <option *ngFor="let department of departmentlist" [value]="department">{{ department }}</option>
+            </select>
+            <div *ngIf="departmen.touched && departmen.invalid" class="validation-message">
+                Department is required.
+            </div>
+
+            <div>
+                <label for="designation">Select Designation:<br>
+                    <input type="radio" name="experience" value="experienced" [(ngModel)]="selectedOption"
+                        style="transform: translateY(29px);margin-left: 50px;">
+                    Experienced
+                </label>
+                <label>
+                    <input type="radio" name="experience" value="fresher" [(ngModel)]="selectedOption"
+                        style="transform: translateY(19px);margin-left: 50px;">
+                    Fresher
+                </label>
+            </div>
+
+
+            <label for="dob" style="margin-top: 19px;">Date of Birth:</label>
+            <input type="date" id="dob" [(ngModel)]="dob" name="dob" required #dateob="ngModel">
+            <div *ngIf="dateob.touched && dateob.invalid" class="validation-message">
+                Date Of Birth is required.
+            </div>
+
+            <label for="salary">Enter Salary:</label>
+            <input type="number" id="salary" [(ngModel)]="salary" name="salary" required #salar="ngModel">
+            <div *ngIf="salar.touched && salar.invalid" class="validation-message">
+                Salary is required.
+            </div>
+
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" [(ngModel)]="address" name="address" required #addres="ngModel">
+            <div *ngIf="addres.touched && addres.invalid" class="validation-message">
+                Address is required.
+            </div>
+
+
+
+            <!-- <button type="button" (click)="addcenter()"
+                style="margin-left: 170px; margin-top: 49px; width: 124px;height: 40px;font-weight: bold;font-size: 20px; border: 1px solid black;"
+                [disabled]="!isFormValid()">Add Center</button> -->
+
+            <button type="button" (click)="savedraft()"
+                style="margin-left: 170px; margin-top: 49px; width: 124px;height: 40px;font-weight: bold;font-size: 20px; border: 1px solid black;">Save
+                Draft</button>
+            <button type="button"
+                style="margin-left: 170px; margin-top: 49px; width: 124px;height: 40px;font-weight: bold;font-size: 20px; background-color: #dabf3d;"
+                (click)="next()">Next page</button>
+
+            <!-- <div *ngIf="!isFormValid" class="error-message">
+                    Please fill in all fields.
+                </div> -->
+
+            <div *ngIf="responseMessage">{{ responseMessage }}</div>
+        </form>
+
+        <div class="img">
+            <img src="https://www.cowin.gov.in/assets/images/Step_1.svg" alt="image" width="400px" height="700px"
+                style="margin-right: 100px;">
+        </div>
+    </div>
+
+    `
+
+</div>

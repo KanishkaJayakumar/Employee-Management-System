@@ -1,0 +1,23 @@
+input{
+    width: 85%;
+    margin: 13px;
+    margin-bottom: 14px;
+    font-size: 20px;
+    border: 1px solid black;
+}
+
+form{
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+}
+
+.validation-message {
+    margin: 0 auto;
+    top: 50%;
+    padding: 4px;
+    transform: translateX(20%);
+    color: rgb(218, 22, 22);
+    font-size: 20px;
+  }
+   
