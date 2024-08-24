@@ -26,7 +26,7 @@ firstname: any;
       salary: any;
       address: any;
       selectedOption : string =''
-      private baseUrl : string = 'http://employee-management-system-dhpx.onrender.com/addemp'
+      private baseUrl : string = 'https://employee-management-system-dhpx.onrender.com/addemp'
 
 constructor(private http : HttpClient) {}
 
